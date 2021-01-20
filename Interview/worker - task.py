@@ -107,6 +107,12 @@ while tasks:
         if task.worker:
             print(f'Worker {task.worker.id} finished Task {task.id} for L{task.stage - 1}')
             task.worker = None
+            
+            if task.stage == 3:
+                tasks.remove(task)
+                
+                if not tasks:
+                    print(f'Total time taken: {current_time} min')
         
         to_assign = None
 
@@ -124,11 +130,5 @@ while tasks:
             task.worker = to_assign
             task.stage += 1
             
-            
 
-            if task.stage == 3:
-                tasks.remove(task)
-                
     current_time += 1
-
-print(current_time)
