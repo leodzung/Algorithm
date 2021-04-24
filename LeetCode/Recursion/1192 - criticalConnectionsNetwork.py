@@ -43,7 +43,7 @@ class Solution(object):
         
         # Start traversing
         for nbor in self.graph[node]:
-            # If this is the parent node (the node we start DFS with), skip it
+            # If this is the parent node (of the node we start DFS with), skip it to avoid perpetual loop
             if self.rank[nbor] and self.rank[nbor] == discovery_rank - 1:
                 continue
                 
