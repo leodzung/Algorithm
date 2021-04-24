@@ -29,6 +29,7 @@ class Solution(object):
             
             self.cmap[(min(u, v), max(u, v))] = True
             
+    # Recursively traverse the graph to find cycle, and return the minimum rank of the current traversal            
     def DFS(self, node, discovery_rank):
         # If we already seen this node and rank it, return the rank
         if self.rank[node]:
