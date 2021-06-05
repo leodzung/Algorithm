@@ -14,7 +14,8 @@ class Solution:
             # Count is the position of x in the sorted table
             return count >= k
         
-        # Binary search
+        # Binary search: find the smallest number in range (lo, hi) that is enough
+        # This number (num) has to be in the table, else the largest number in the table < num should also be enough
         lo, hi = 1, m*n
         while lo < hi:
             mi = (lo+hi) // 2
